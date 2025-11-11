@@ -35,10 +35,6 @@ class OrderController extends Controller
     public function update(Request $request, Order $order)
     {
         $validated = $request->validate([
-            'type' => [
-                'required',
-                Rule::in(['card', 'phone']),
-            ],
             'status' => [
                 'required',
                 Rule::in(['new', 'process', 'succsess', 'canceled']),
